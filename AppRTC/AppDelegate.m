@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RTCPeerConnectionFactory.h"
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+@import Firebase;
 
 @implementation AppDelegate
 
@@ -16,8 +17,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [RTCPeerConnectionFactory initializeSSL];
-
+    [FIRApp configure];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+    didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -42,6 +47,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
     [RTCPeerConnectionFactory deinitializeSSL];
+    
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+
+      BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+        openURL:url
+        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+        annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+      ];
+      // Add any custom logic here.
+      return handled;
     
 }
 

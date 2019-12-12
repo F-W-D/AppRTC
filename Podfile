@@ -2,4 +2,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 
-pod 'AppRTC', path: '.'
+target 'AppRTC' do
+  pod 'AppRTC', path: '.'
+  pod 'FBSDKLoginKit'
+  pod 'Firebase/Analytics'
+end

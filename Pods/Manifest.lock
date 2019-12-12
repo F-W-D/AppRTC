@@ -1,20 +1,79 @@
 PODS:
-  - AppRTC (1.0.2):
+  - AppRTC (1.0.3):
     - libjingle_peerconnection
     - SocketRocket
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FBSDKCoreKit (4.37.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.37.0):
+    - FBSDKCoreKit
+  - Firebase/Analytics (4.13.0):
+    - Firebase/Core
+  - Firebase/Core (4.13.0):
+    - FirebaseAnalytics (= 4.2.0)
+    - FirebaseCore (= 4.0.20)
+  - FirebaseAnalytics (4.2.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.20):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (2.0.10):
+    - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
   - libjingle_peerconnection (10642.2.0)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - SocketRocket (0.4.2)
 
 DEPENDENCIES:
   - AppRTC (from `.`)
+  - FBSDKLoginKit
+  - Firebase/Analytics
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleToolboxForMac
+    - libjingle_peerconnection
+    - nanopb
+    - SocketRocket
 
 EXTERNAL SOURCES:
   AppRTC:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
-  AppRTC: 29a5418955fee7fba3df36a0c37285cd835272ad
+  AppRTC: 6543d19ff0965a09b94f3903a4a180da5b8d9293
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FBSDKCoreKit: fe5f3474499a81963e11e3f3a5c753d0a95ca2b4
+  FBSDKLoginKit: 2f7249686d1e30ce8a5ef5400eedf50b3e3df332
+  Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
+  FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
+  FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   libjingle_peerconnection: 96592d7e75876776f6a7c21267926a132effc3cc
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: c95161a05ee702fa3b8851f3e9342e512ede9e16
+
+COCOAPODS: 1.7.1

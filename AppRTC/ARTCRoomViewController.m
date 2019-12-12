@@ -8,13 +8,22 @@
 
 #import "ARTCRoomViewController.h"
 #import "ARTCVideoChatViewController.h"
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @implementation ARTCRoomViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.readPermissions = @[@"public_profile", @"email"];
+    loginButton.center = self.view.center;
+    
+    [self.view addSubview:loginButton];
+    if ([FBSDKAccessToken currentAccessToken]) {
+     //User is logged in:
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
